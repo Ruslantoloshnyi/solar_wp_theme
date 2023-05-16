@@ -151,6 +151,7 @@ function solar_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'solar_scripts' );
+add_action( 'enqueue_block_editor_assets', 'solar_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -178,4 +179,9 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * ACF functions.
+ */
+require get_template_directory() . '/inc/acf-functions.php';
 

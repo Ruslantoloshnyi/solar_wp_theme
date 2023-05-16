@@ -24,21 +24,25 @@
 
 <body>
 
+	<?php
+	$content = get_field('header_content');
+	?>
+
 	<!-- Header -->
 	<header class="header">
 		<div class="header-container">
 
-			<h2 class="header-logo">SOLAR EXE</h2>
+			<h2 class="header-logo"><?php echo get_field('header_logo') ?></h2>
 
 			<div class="header-content">
-				<div class="header-content_one_size">Зеленый тариф для дома и бизнеса</div>
-				<div class="header-content_two_size">Солнечная электростанция</div>
-				<div class="header-content_three_size">с доходом от 1000 $ в месяц</div>
+				<div class="header-content_one_size"><?php echo $content['header_content_one']; ?></div>
+				<div class="header-content_two_size"><?php echo $content['header_content_two']; ?></div>
+				<div class="header-content_three_size"><?php echo $content['header_content_three']; ?></div>
 			</div>
 
 			<div class="header-show-form">
 				<button class="header-show-form__button">&#8594;</button>
-				<p class="header-show-form_text">Записаться на консультацию</p>
+				<p class="header-show-form_text"><?php echo get_field('header_form_text'); ?></p>
 			</div>
 
 			<form class="header-consultation-form" style="display: none;" action="" method="POST">
@@ -47,8 +51,7 @@
 				<input class="header-consultation-form__button" type="button" value="Записаться">
 			</form>
 
-			<div class="header-consultation_successfully" style="display: none;">Спасибо, мы перезвоним Вам в ближайшее
-				время.</div>
+			<div class="header-consultation_successfully" style="display: none;"><?php echo get_field('header_form_successfully') ?></div>
 
 			<div class="header-socials">
 				<a href="#"><img class="header-socials_inst" src="./assets/image/instagram.png" alt=""></a>
