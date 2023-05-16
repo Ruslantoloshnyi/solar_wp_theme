@@ -140,8 +140,11 @@ add_action( 'widgets_init', 'solar_widgets_init' );
 function solar_scripts() {
 	wp_enqueue_style( 'solar-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'solar-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'solar-style.css', get_template_directory_uri() . '/assets/css/style.css');
 
 	wp_enqueue_script( 'solar-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'solar-script.js', get_template_directory_uri() . '/assets/js/script.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'solar-sliders.js', get_template_directory_uri() . '/assets/js/sliders.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
