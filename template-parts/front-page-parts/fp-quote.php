@@ -4,13 +4,10 @@
     <div class="wrapper">
         <div class="quote-block">
             <div class="quote__image">
-                <img src="./assets/image/quote-image.jpg" alt="">
+                <?php echo wp_get_attachment_image( get_field('fp_quote_image'), 'full'); ?>
             </div>
             <div class="quote__text">
-                <p>«Солнечная электростанция
-                    — идеальное вложение средств
-                    в свою энергонезависимость и
-                    пассивный доход»</p>
+                <p><?php echo get_field('fp_quote_text'); ?></p>
             </div>
         </div>
     </div>

@@ -24,6 +24,16 @@ function acf_portfolio_item_block() {
 			'icon'				=> 'excerpt-view',
 			'keywords'			=> array( 'servises' ),
 		));
+
+		acf_register_block(array(
+			'name'				=> 'quote item',
+			'title'				=> __('Цитата блок'),
+			'description'		=> __('A custom block quote.'),
+			'render_template'	=> 'template-parts/front-page-parts/fp-quote.php',
+			'category'			=> 'layout',
+			'icon'				=> 'excerpt-view',
+			'keywords'			=> array( 'servises' ),
+		));
 	}
 }
 
