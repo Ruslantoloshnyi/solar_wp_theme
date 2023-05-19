@@ -4,37 +4,19 @@
         <div class="wrapper">
             <div class="steps-content">
                 <div class="steps-content-block">
-                    <div class="section__head">5 ШАГОВ К СОБСТВЕННОЙ ЭЛЕКТРОСТАНЦИИ</div>
-                    <div class="steps-content__text">
-                        <h2>Заявка или звонок</h2>
-                        <p>Оставляете заявку на нашем сайте или связываетесь с нами по телефону или в мессенджерах.
-                        </p>
-                    </div>
-                    <div class="steps-content__text">
-                        <h2>Консультация и замер на объекте</h2>
-                        <p>Мы просчитываем более 10- 15 вариантов солнечной станции на Вашем участке, чтобы
-                            предложить
-                            Вам один наиболее выгодный.</p>
-                    </div>
-                    <div class="steps-content__text">
-                        <h2>Заключение договора</h2>
-                        <p>Заключается договор, благодаря которому, вы будете застрахованы от некачественного
-                            оборудования и срыва сроков.</p>
-                    </div>
-                    <div class="steps-content__text">
-                        <h2>Монтаж СЭС</h2>
-                        <p>Наши специалисты производят монтаж солнечных батарей, проводки и инверторов, при
-                            необходимости изготавливают опоры.</p>
-                    </div>
-                    <div class="steps-content__text">
-                        <h2>Получение дохода от государства</h2>
-                        <p>После подключения к «Зеленому тарифу», вы получаете доход за каждый киловатт,
-                            выработанный на
-                            Вашей солнечной электростанции по зафиксированному тарифу на момент подключения.</p>
-                    </div>
+                    <div class="section__head"><?php echo get_field('fp_steps_heading'); ?></div>
+                    <?php if (have_rows('fp_steps_content')) :
+                        while (have_rows('fp_steps_content')) : the_row();
+                    ?>
+                            <div class="steps-content__text">
+                                <h2><?php echo get_sub_field('fp_steps_content_head'); ?></h2>
+                                <p><?php echo get_sub_field('fp_steps_content_text'); ?></p>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
                 <div class="steps__image">
-                    <img src="./assets/image/steps-image.jpg" alt="">
+                    <?php echo wp_get_attachment_image( get_field('fp_steps_image'), 'full'); ?>
                 </div>
             </div>
         </div>

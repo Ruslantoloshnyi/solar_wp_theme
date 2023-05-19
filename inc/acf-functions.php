@@ -22,7 +22,7 @@ function acf_portfolio_item_block() {
 			'render_template'	=> 'template-parts/front-page-parts/fp-green-tariff.php',
 			'category'			=> 'layout',
 			'icon'				=> 'excerpt-view',
-			'keywords'			=> array( 'servises' ),
+			'keywords'			=> array( 'tariff' ),
 		));
 
 		acf_register_block(array(
@@ -32,7 +32,27 @@ function acf_portfolio_item_block() {
 			'render_template'	=> 'template-parts/front-page-parts/fp-quote.php',
 			'category'			=> 'layout',
 			'icon'				=> 'excerpt-view',
-			'keywords'			=> array( 'servises' ),
+			'keywords'			=> array( 'quote' ),
+		));
+
+		acf_register_block(array(
+			'name'				=> 'Clients item',
+			'title'				=> __('Наши клиенты'),
+			'description'		=> __('A custom block for clients.'),
+			'render_template'	=> 'template-parts/front-page-parts/fp-our-clients.php',
+			'category'			=> 'layout',
+			'icon'				=> 'excerpt-view',
+			'keywords'			=> array( 'clients' ),
+		));
+
+		acf_register_block(array(
+			'name'				=> 'Steps item',
+			'title'				=> __('Блок Шаги'),
+			'description'		=> __('A custom block steps.'),
+			'render_template'	=> 'template-parts/front-page-parts/fp-steps.php',
+			'category'			=> 'layout',
+			'icon'				=> 'excerpt-view',
+			'keywords'			=> array( 'steps' ),
 		));
 	}
 }
